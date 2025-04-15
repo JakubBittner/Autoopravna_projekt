@@ -2,69 +2,168 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Autoopravna Bittner</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/script.js' %}" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Autoopravna Bittner</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">Autoopravna Bittner</div>
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sluzby">Služby</a></li>
+      <li><a href="#procmy">Proč my?</a></li>
+      <li><a href="#reference">Hodnocení</a></li>
+      <li><a href="#onas">O nás</a></li>
+      <li><a href="#cenik">Ceník</a></li>
+    </ul>
+  </nav>
 
-    
-    <nav class="navbar">
-        <div class="logo">Autoopravna</div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#">Domů</a></li>
-            <li><a href="#sluzby">Služby</a></li>
-            <li><a href="#onas">O nás</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-    </nav>
+  <header class="hero">
+    <h1>Vítejte v Autoopravně Bittner</h1>
+    <p>Postaráme se o vaše auto jako o vlastní</p>
+    <a href="#sluzby" class="btn">Rezervovat opravu</a>
+  </header>
 
-    
-    <header class="hero">
-        <h1>Vítejte v Autoopravně Bittner</h1>
-        <p>Postaráme se o vaše auto jako o vlastní</p>
-        <button id="rezervace-btn">Rezervovat opravu</button>
-    </header>
+  <section id="sluzby" class="services-section">
+    <h2>Naše služby</h2>
+    <div class="services-container">
+      <div class="side-image left">
+        <img src="{% static 'img/servis1.jpg' %}" alt="Servis 1">
+      </div>
 
-    
-    <section id="sluzby" class="sluzby">
-        <h2>Naše služby</h2>
-        <ul>
-            <li>✔️ Opravy motoru</li>
-            <li>✔️ Pneuservis</li>
-            <li>✔️ Diagnostika</li>
-            <li>✔️ Půjčení náhradního vozidla</li>
-        </ul>
-    </section>
-
-    
-    <section id="onas" class="onas">
-        <h2>O nás</h2>
-        <p><strong>Adresa:</strong> Ulice 123, Opava</p>
-        <p><strong>Otevírací doba:</strong></p>
-        <ul>
-            <li>Pondělí–Pátek: 8:00 – 17:00</li>
-            <li>Sobota: 9:00 – 13:00</li>
-            <li>Neděle: Zavřeno</li>
-        </ul>
-    </section>
-
-    
-    <section class="partneri">
-        <h2>Naši partneři</h2>
-        <div class="sponzori">
-            <img src="{% static 'img/sponzor1.png' %}" alt="Castrol">
-            <img src="{% static 'img/sponzor2.png' %}" alt="Michelin">
-            <img src="{% static 'img/sponzor3.png' %}" alt="Sponzor 3">
+      <div class="cards">
+        <div class="service-card">
+          <h3>Opravy motoru</h3>
+          <p>Diagnostika motoru, výměna oleje, svíček, těsnění, rozvodového řemene a další opravy.</p>
         </div>
-    </section>
+        <div class="service-card">
+          <h3>Pneuservis</h3>
+          <p>Výměna a vyvážení pneumatik, oprava defektů, uskladnění sezónních pneu.</p>
+        </div>
+        <div class="service-card">
+          <h3>Diagnostika</h3>
+          <p>Moderní počítačová diagnostika všech značek, výčet a mazání chybových kódů.</p>
+        </div>
+        <div class="service-card">
+          <h3>Půjčení náhradního vozidla</h3>
+          <p>Možnost zapůjčení vozidla po dobu opravy, výběr z více kategorií vozů.</p>
+        </div>
+        <div class="service-card">
+          <h3>Karosářské práce</h3>
+          <p>Opravy karosérie, lakování, odstranění promáčklin a poškození karoserie.</p>
+        </div>
+        <div class="service-card">
+          <h3>Výkup vozidel</h3>
+          <p>Rychlý výkup ojetých nebo nepojízdných vozidel za férové ceny.</p>
+        </div>
+      </div>
 
-    
-    <footer id="kontakt">
-        <p>Kontakt: info@autoopravnabittner.cz | Tel: +420 123 456 789</p>
-        <p>&copy; 2025 Autoopravna Bittner. Všechna práva vyhrazena.</p>
-    </footer>
+      <div class="side-image right">
+        <img src="{% static 'img/servis2.jpg' %}" alt="Servis 2">
+      </div>
+    </div>
+  </section>
+
+  <section class="procmy" id="procmy">
+    <h2>Proč právě my?</h2>
+    <div class="procmy-container">
+        <div class="procmy-box">
+            <h3>✅ Férové ceny</h3>
+            <p>Vždy víte, za co platíte. Žádné skryté poplatky.</p>
+        </div>
+        <div class="procmy-box">
+            <h3>✅ Certifikovaní mechanici</h3>
+            <p>Profesionální tým s dlouholetou praxí a certifikacemi.</p>
+        </div>
+        <div class="procmy-box">
+            <h3>✅ Náhradní vůz</h3>
+            <p>K dispozici po dobu opravy, abyste nezůstali bez auta.</p>
+        </div>
+        <div class="procmy-box">
+            <h3>✅ Péče o zákazníky</h3>
+            <p>Osobní přístup, rychlá komunikace a maximální pohodlí.</p>
+        </div>
+    </div>
+</section>
+
+  <section class="reference" id="reference">
+    <h2>Hodnocení zákazníků</h2>
+    <div class="review">
+      <img src="{% static 'img/profil1.png' %}" alt="profil" class="profil-vetsi">
+      <div>
+        <strong>Petra K.</strong>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>„Rychlý servis a výborný přístup!“</p>
+      </div>
+    </div>
+    <div class="review">
+      <img src="{% static 'img/profil2.png' %}" alt="profil">
+      <div>
+        <strong>Marek T.</strong>
+        <p>⭐⭐⭐⭐</p>
+        <p>„Auto mi opravili do druhého dne. Doporučuji.“</p>
+      </div>
+    </div>
+    <div class="review">
+      <img src="{% static 'img/profil3.png' %}" alt="profil">
+      <div>
+        <strong>Lucie B.</strong>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>„Maximální spokojenost! Profesionální přístup.“</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="onas" id="onas">
+    <h2>O nás</h2>
+    <p>Jsme rodinná autoopravna s dlouholetou tradicí. Opravujeme osobní i dodávkové vozy, nabízíme kompletní servis od diagnostiky po výkup. Naším cílem je poskytovat kvalitní a dostupné služby.</p>
+    <p><strong>Adresa:</strong> Ulice 123, Opava</p>
+    <p><strong>Otevírací doba:</strong></p>
+    <ul>
+      <li>Pondělí–Pátek: 8:00 – 17:00</li>
+      <li>Sobota: 9:00 – 13:00</li>
+      <li>Neděle: Zavřeno</li>
+    </ul>
+  </section>
+
+  <section class="cenik" id="cenik">
+    <h2>Ceník</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Diagnostika</h3>
+        <p>Odhalení závad pomocí moderní technologie.</p>
+        <strong>500 Kč</strong>
+      </div>
+      <div class="card">
+        <h3>Výměna oleje</h3>
+        <p>Zahrnuje olej, filtr a ekologickou likvidaci.</p>
+        <strong>od 800 Kč</strong>
+      </div>
+      <div class="card">
+        <h3>Brzdy</h3>
+        <p>Výměna předních destiček a kontrola kotoučů.</p>
+        <strong>od 1200 Kč</strong>
+      </div>
+      <div class="card">
+        <h3>Půjčení auta</h3>
+        <p>Náhradní vozidlo po dobu opravy.</p>
+        <strong>od 300 Kč/den</strong>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="sponzori">
+      <img src="{% static 'img/sponzor1.png' %}" alt="Sponzor 1">
+      <img src="{% static 'img/sponzor2.png' %}" alt="Sponzor 2">
+      <img src="{% static 'img/sponzor3.png' %}" alt="Sponzor 3">
+    </div>
+    <p>Kontakt: info@autoopravnabittner.cz | Tel: +420 123 456 789</p>
+    <p>&copy; 2025 Autoopravna Bittner. Všechna práva vyhrazena.</p>
+  </footer>
+
+  <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

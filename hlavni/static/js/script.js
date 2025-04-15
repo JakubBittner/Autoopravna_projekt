@@ -1,23 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("rezervace-btn");
-    const hamburger = document.getElementById("hamburger");
+// Toggle mobilního menu
+document.getElementById("mobile-menu").addEventListener("click", function () {
     const navLinks = document.getElementById("nav-links");
-
-    // Hover efekt tlačítka
-    btn.addEventListener("mouseover", () => {
-        btn.style.boxShadow = "0px 0px 20px rgba(255, 153, 0, 0.8)";
-    });
-
-    btn.addEventListener("mouseout", () => {
-        btn.style.boxShadow = "none";
-    });
-
-    btn.addEventListener("click", () => {
-        alert("Přesměrování na formulář rezervace (zatím nefunkční)");
-    });
-
-    // Hamburger menu toggle
-    hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-});
+    navLinks.classList.toggle("active");
+  });
+  
+  // Jemná animace pozadí v hlavičce
+  document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector(".hero");
+  
+    let x = 0;
+    setInterval(() => {
+      x += 0.5;
+      hero.style.backgroundPosition = `${x}px ${x}px`;
+    }, 50);
+  });
+  
+  // Animace při scrollu - sekce se zjeví hladce
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+  
+  document.querySelectorAll("section").forEach((section) => {
+    observer.observe(section);
+  });
+  
