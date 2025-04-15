@@ -8,13 +8,28 @@
     <script src="{% static 'js/script.js' %}" defer></script>
 </head>
 <body>
+
+    
+    <nav class="navbar">
+        <div class="logo">Autoopravna</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Domů</a></li>
+            <li><a href="#sluzby">Služby</a></li>
+            <li><a href="#onas">O nás</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    
     <header class="hero">
         <h1>Vítejte v Autoopravně Bittner</h1>
         <p>Postaráme se o vaše auto jako o vlastní</p>
         <button id="rezervace-btn">Rezervovat opravu</button>
     </header>
 
-    <section class="sluzby">
+    
+    <section id="sluzby" class="sluzby">
         <h2>Naše služby</h2>
         <ul>
             <li>✔️ Opravy motoru</li>
@@ -24,7 +39,31 @@
         </ul>
     </section>
 
-    <footer>
+    
+    <section id="onas" class="onas">
+        <h2>O nás</h2>
+        <p><strong>Adresa:</strong> Ulice 123, Opava</p>
+        <p><strong>Otevírací doba:</strong></p>
+        <ul>
+            <li>Pondělí–Pátek: 8:00 – 17:00</li>
+            <li>Sobota: 9:00 – 13:00</li>
+            <li>Neděle: Zavřeno</li>
+        </ul>
+    </section>
+
+    
+    <section class="partneri">
+        <h2>Naši partneři</h2>
+        <div class="sponzori">
+            <img src="{% static 'img/sponzor1.png' %}" alt="Castrol">
+            <img src="{% static 'img/sponzor2.png' %}" alt="Michelin">
+            <img src="{% static 'img/sponzor3.png' %}" alt="Sponzor 3">
+        </div>
+    </section>
+
+    
+    <footer id="kontakt">
+        <p>Kontakt: info@autoopravnabittner.cz | Tel: +420 123 456 789</p>
         <p>&copy; 2025 Autoopravna Bittner. Všechna práva vyhrazena.</p>
     </footer>
 </body>
