@@ -29,10 +29,15 @@
   <section id="sluzby" class="services-section">
     <h2>Naše služby</h2>
     <div class="services-container">
+      
+      <!-- Levá reklama -->
       <div class="side-image left">
-        <img src="{% static 'img/servis1.jpg' %}" alt="Servis 1">
+        <a id="reklama-leva-odkaz" href="https://www.michelin.cz" target="_blank">
+          <img id="reklama-leva" class="reklama-img" src="{% static 'img/michelin.png' %}" alt="Reklama 1">
+        </a>
       </div>
-
+  
+      <!-- Karty služeb -->
       <div class="cards">
         <div class="service-card">
           <h3>Opravy motoru</h3>
@@ -59,12 +64,17 @@
           <p>Rychlý výkup ojetých nebo nepojízdných vozidel za férové ceny.</p>
         </div>
       </div>
-
+  
+      <!-- Pravá reklama -->
       <div class="side-image right">
-        <img src="{% static 'img/servis2.jpg' %}" alt="Servis 2">
+        <a id="reklama-prava-odkaz" href="https://www.castrol.com" target="_blank">
+          <img id="reklama-prava" class="reklama-img" src="{% static 'img/castrol.png' %}" alt="Reklama 2">
+        </a>
       </div>
+  
     </div>
   </section>
+  
 
   <section class="procmy" id="procmy">
     <h2>Proč právě my?</h2>
@@ -92,19 +102,19 @@
   <h2>Hodnocení zákazníků</h2>
   <div class="reviews-container">
     <div class="review">
-      <img src="{% static 'img/profil1.jpg' %}" alt="Petra">
+      <img src="{% static 'img/profil1.png' %}" alt="Petra">
       <h3>Petra K.</h3>
       <div class="stars">★★★★★</div>
       <p>„Rychlý servis a výborný přístup!”</p>
     </div>
     <div class="review">
-      <img src="{% static 'img/profil2.jpg' %}" alt="Marek">
+      <img src="{% static 'img/profil2.png' %}" alt="Marek">
       <h3>Marek T.</h3>
       <div class="stars">★★★★★</div>
       <p>„Auto mi opravili do druhého dne. Doporučuji.“</p>
     </div>
     <div class="review">
-      <img src="{% static 'img/profil3.jpg' %}" alt="Lucie">
+      <img src="{% static 'img/profil3.png' %}" alt="Lucie">
       <h3>Lucie B.</h3>
       <div class="stars">★★★★★</div>
       <p>„Maximální spokojenost! Profesionální přístup.”</p>
@@ -113,17 +123,14 @@
 </section>
 
 
-  <section class="onas" id="onas">
-    <h2>O nás</h2>
-    <p>Jsme rodinná autoopravna s dlouholetou tradicí. Opravujeme osobní i dodávkové vozy, nabízíme kompletní servis od diagnostiky po výkup. Naším cílem je poskytovat kvalitní a dostupné služby.</p>
-    <p><strong>Adresa:</strong> Ulice 123, Opava</p>
-    <p><strong>Otevírací doba:</strong></p>
-    <ul>
-      <li>Pondělí–Pátek: 8:00 – 17:00</li>
-      <li>Sobota: 9:00 – 13:00</li>
-      <li>Neděle: Zavřeno</li>
-    </ul>
-  </section>
+<section class="onas">
+  <h2>O nás</h2>
+  <p>
+    Jsme moderní autoopravna s tradicí a vášní pro auta. Naše zkušenosti a profesionální přístup zajišťují, že každé vozidlo dostane tu nejlepší péči. 
+    Zakládáme si na férovém jednání, rychlém servisu a spokojenosti našich zákazníků. Ať už potřebujete běžnou údržbu, opravu, nebo odborné poradenství, jsme tu pro vás.  
+  </p>
+</section>
+
 
   <section class="cenik" id="cenik">
     <h2>Ceník</h2>
@@ -151,15 +158,25 @@
     </div>
   </section>
 
-  <footer>
-    <div class="sponzori">
+  <section class="sponzori">
+    <h2>Naši partneři</h2>
+    <div class="sponzori-logo">
       <img src="{% static 'img/sponzor1.png' %}" alt="Sponzor 1">
       <img src="{% static 'img/sponzor2.png' %}" alt="Sponzor 2">
       <img src="{% static 'img/sponzor3.png' %}" alt="Sponzor 3">
     </div>
-    <p>Kontakt: info@autoopravnabittner.cz | Tel: +420 123 456 789</p>
-    <p>&copy; 2025 Autoopravna Bittner. Všechna práva vyhrazena.</p>
+  </section>
+
+  <footer>
+    <div class="footer-info">
+      <p><strong>Adresa:</strong> Ulice 123, 746 01 Opava</p>
+      <p><strong>Otevírací doba:</strong> Po–Pá: 8:00–17:00 | So: 8:00–12:00 | Ne: Zavřeno</p>
+      <p><strong>Kontakt:</strong> info@autoopravnabittner.cz | Tel: +420 123 456 789</p>
+      <p>&copy; 2025 Autoopravna Bittner. Všechna práva vyhrazena.</p>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
   </footer>
+  
 
   <script src="{% static 'js/script.js' %}"></script>
 </body>
