@@ -102,23 +102,37 @@ body {
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  flex: 1;
-  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .service-card {
-  flex: 1 1 250px;
-  max-width: 300px;
-  background-color: #fff;
-  padding: 20px;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin: 1rem;
+  transition: transform 0.3s ease; /* Plynulé zvětšení */
+  width: 100%;
+  max-width: 350px;
   text-align: center;
-  margin: 10px;
+}
+
+.service-card:hover {
+  transform: scale(1.05); /* Zvětšení při najetí */
+}
+
+@media (max-width: 768px) {
+  .service-card {
+      flex: 1 1 calc(50% - 2rem); /* 2 vedle sebe */
+  }
+}
+
+@media (max-width: 500px) {
+  .service-card {
+      flex: 1 1 100%; /* 1 pod sebe */
+  }
 }
 
 /* Proč právě my */
