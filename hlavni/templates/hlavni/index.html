@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Autoopravna Bittner</title>
+  <title>Carverra</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'img/carlogo.png' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <nav class="navbar">
-    <div class="logo">Autoopravna </div>
+    <div class="logo">
+      <img src="{% static 'img/CRlogo.png' %}" alt="Logo" class="logo-img">
+      Carverra autoopravna a půjčovna
+    </div>
     <div class="menu-toggle" id="mobile-menu">&#9776;</div>
     <ul class="nav-links" id="nav-links">
       <li><a href="#sluzby">Služby</a></li>
@@ -21,7 +25,7 @@
   </nav>
 
   <header class="hero">
-    <h1>Vítejte v Autoopravně Bittner</h1>
+    <h1>Vítejte v Autoopravně</h1>
     <p>Postaráme se o vaše auto jako o vlastní</p>
     <a href="#sluzby" class="btn">Rezervovat opravu</a>
   </header>
