@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registrace | Carverra</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'img/carlogo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="{% static 'img/CRlogo.png' %}" alt="Logo" class="logo-img">
+      Carverra autoopravna a půjčovna
+    </div>
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sluzby">Služby</a></li>
+      <li><a href="#procmy">Proč my?</a></li>
+      <li><a href="#reference">Hodnocení</a></li>
+      <li><a href="#onas">O nás</a></li>
+      <li><a href="#cenik">Ceník</a></li>
+      <li><a href="{% url 'register' %}">Registrace</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Registrace</h1>
+    <p>Vytvořte si účet pro přístup k našim službám.</p>
+  </header>
+
+  <section class="registration-form">
+    <h2>Zaregistrujte se</h2>
+    <form method="POST" action="{% url 'register' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Uživatelské jméno:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Heslo:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm_password">Potvrďte heslo:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+      </div>
+
+      <button type="submit" class="btn">Registrovat se</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-info">
+      <p><strong>Adresa:</strong> Ulice 123, 746 01 Opava</p>
+      <p><strong>Otevírací doba:</strong> Po–Pá: 8:00–17:00 | So: 8:00–12:00 | Ne: Zavřeno</p>
+      <p><strong>Kontakt:</strong> info@autoopravnabittner.cz | Tel: +420 123 456 789</p>
+      <p>&copy; 2025 Autoopravna Bittner. Všechna práva vyhrazena.</p>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+  </footer>
+
+</body>
+</html>
+
+
