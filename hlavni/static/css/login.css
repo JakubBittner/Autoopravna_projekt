@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f6f6f6;
+    color: #222;
+}
+
+nav {
+    background-color: #003c70;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Hlavní sekce */
+h1 {
+    text-align: center;
+    color: #003c70;
+    font-size: 48px;
+    margin-top: 40px;
+}
+
+/* Formulář pro přihlášení */
+form {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form input:focus {
+    border-color: #003c70;
+    outline: none;
+}
+
+form button {
+    background-color: #ff6600;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e55b00;
+}
+
+/* Footer */
+footer {
+    background-color: #003c70;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
