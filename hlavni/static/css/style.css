@@ -48,7 +48,8 @@ body {
 .nav-links li a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: large;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -65,7 +66,7 @@ body {
 }
 
 .nav-links li a:hover {
-  color: #ffcc00;
+  color: #ff6600;
 }
 .nav-links li a:hover::after {
   width: 100%;
@@ -80,10 +81,9 @@ body {
   transition: background 0.3s ease;
 }
 .login-link:hover {
-  background-color: #ffcc00;
+  background-color: #ff6600;
   color: #000 !important;
 }
-
 
 /* Mobilní toggle ikona */
 .menu-toggle {

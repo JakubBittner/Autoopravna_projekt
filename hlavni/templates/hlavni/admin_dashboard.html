@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Správa Oprav</title>
+    <link rel="stylesheet" href="/static/css/admin-dashboard.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="/static/img/logo.png" alt="Logo" class="logo-img">
+        <span class="brand-name">AutoServis</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="/">Domů</a></li>
+        <li><a href="/logout">Odhlásit se</a></li>
+    </ul>
+</nav>
+
+<!-- Hlavní část -->
+<div class="admin-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Admin Menu</h2>
+        <ul>
+            <li><a href="#pridat-opravu" class="active">Přidat opravu</a></li>
+            <li><a href="#sprava-oprav">Správa oprav</a></li>
+        </ul>
+    </aside>
+
+    <!-- Hlavní obsah -->
+    <main class="admin-main">
+        <section id="pridat-opravu">
+            <h1>Přidat novou opravu</h1>
+            <form id="add-repair-form">
+                <div class="form-group">
+                    <label for="nazev">Název opravy:</label>
+                    <input type="text" id="nazev" name="nazev" required>
+                </div>
+                <div class="form-group">
+                    <label for="popis">Popis opravy:</label>
+                    <textarea id="popis" name="popis" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Přidat opravu</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="sprava-oprav">
+            <h1>Existující opravy</h1>
+            <p>Zde budou viditelné existující opravy (zatím prázdné, napojíme na databázi později).</p>
+        </section>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-info">
+        <p>© 2025 AutoServis - Všechna práva vyhrazena.</p>
+    </div>
+</footer>
+
+<script src="/static/js/admin-dashboard.js"></script>
+</body>
+</html>

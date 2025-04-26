@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carverra Dashboard</title>
   <link rel="icon" type="image/x-icon" href="{% static 'img/carlogo.png' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 <body>
 
@@ -24,27 +24,16 @@
   </nav>
 
   <!-- Dashboard content -->
-  <div class="container" style="display: flex; padding: 30px;">
-    <aside class="sidebar" style="width: 220px; background-color: #f5f5f5; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <div class="dashboard-container">
+    <aside class="sidebar">
       <h2>Menu</h2>
-      <ul style="list-style: none; padding-left: 0;">
-        <li style="margin: 15px 0;"><a href="#" onclick="showSection('opravy')">Historie oprav</a></li>
-        <li style="margin: 15px 0;"><a href="#" onclick="showSection('navstevy')">Historie návštěv</a></li>
-        <li style="margin: 15px 0;"><a href="#" onclick="showSection('pujcky')">Půjčená auta</a></li>
-        <li style="margin: 15px 0;"><a href="#" onclick="showSection('dostupna')">Dostupná auta</a></li>
+      <ul>
+        <li><a href="#" onclick="showSection('opravy')" id="opravy-link">Historie oprav</a></li>
+        <li><a href="#" onclick="showSection('navstevy')" id="navstevy-link">Historie návštěv</a></li>
+        <li><a href="#" onclick="showSection('pujcky')" id="pujcky-link">Půjčená auta</a></li>
+        <li><a href="#" onclick="showSection('dostupna')" id="dostupna-link">Dostupná auta</a></li>
       </ul>
     </aside>
-
-    <main class="main-content" style="flex-grow: 1; padding-left: 30px;">
-      <h1 style="color:#003c70;">👋 Vítejte v uživatelském rozhraní</h1>
-      <p>Vyberte si sekci z menu vlevo pro zobrazení informací.</p>
-
-      <section id="opravy" class="content-section" style="margin-top: 30px;">Zde bude historie oprav</section>
-      <section id="navstevy" class="content-section hidden" style="margin-top: 30px;">Zde bude historie návštěv</section>
-      <section id="pujcky" class="content-section hidden" style="margin-top: 30px;">Zde budou půjčená auta</section>
-      <section id="dostupna" class="content-section hidden" style="margin-top: 30px;">Zde budou dostupná auta</section>
-    </main>
-  </div>
 
   <!-- Footer -->
   <footer>
@@ -62,8 +51,14 @@
       const sections = document.querySelectorAll('.content-section');
       sections.forEach(section => section.classList.add('hidden'));
       document.getElementById(id).classList.remove('hidden');
+
+      // Set active link in sidebar
+      const links = document.querySelectorAll('.sidebar a');
+      links.forEach(link => link.classList.remove('active'));
+      document.getElementById(id + '-link').classList.add('active');
     }
   </script>
+
   <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
