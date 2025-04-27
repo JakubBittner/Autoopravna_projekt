@@ -24,7 +24,7 @@
   </nav>
 
   <!-- Dashboard content -->
-  <div class="dashboard-container">
+  <div class="dashboard-container" style="display: flex;">
     <aside class="sidebar">
       <h2>Menu</h2>
       <ul>
@@ -34,6 +34,50 @@
         <li><a href="#" onclick="showSection('dostupna')" id="dostupna-link">Dostupná auta</a></li>
       </ul>
     </aside>
+
+    <main class="dashboard-main" style="flex: 1; padding: 30px;">
+      <!-- Sekce Historie Oprav -->
+      <section id="opravy" class="content-section">
+        <div class="card">
+          <h2>Historie oprav</h2>
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Název opravy</th>
+                <th>Popis</th>
+                <th>Datum</th>
+                <th>Stav dokončení</th>
+                <th>Cena</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for repair in repairs %}
+              <tr>
+                <td>{{ repair.title }}</td> <!-- Zobrazíme název opravy -->
+                <td>{{ repair.description }}</td>
+                <td>{{ repair.created_at|date:"d.m.Y" }}</td>
+                <td>
+                  {% if repair.status == "waiting" %} 
+                    Čeká na opravu 
+                  {% elif repair.status == "in_progress" %} 
+                    Probíhá oprava 
+                  {% elif repair.status == "completed" %} 
+                    Dokončeno
+                  {% endif %}
+                </td>
+                <td>{{ repair.price|default:"Neuvedeno" }}</td> <!-- Cenu bude třeba přidat do modelu -->
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="5">Žádné opravy nenalezeny.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -52,7 +96,6 @@
       sections.forEach(section => section.classList.add('hidden'));
       document.getElementById(id).classList.remove('hidden');
 
-      // Set active link in sidebar
       const links = document.querySelectorAll('.sidebar a');
       links.forEach(link => link.classList.remove('active'));
       document.getElementById(id + '-link').classList.add('active');
@@ -60,5 +103,6 @@
   </script>
 
   <script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>

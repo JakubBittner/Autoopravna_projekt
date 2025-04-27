@@ -1,8 +1,12 @@
+# views.py
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .models import Repair
+from .forms import RepairForm
 
 def register(request):
     if request.method == "POST":
@@ -41,14 +45,13 @@ def login_view(request):
         if user:
             login(request, user)
             messages.success(request, "Úspěšně přihlášen!")
-            # redirect podle role – jména URL z urls.py, viz níže
             if user.is_superuser:
-                return redirect('admin_dashboard')   # name='admin_dashboard'
+                return redirect('admin_dashboard')
             else:
-                return redirect('dashboard')         # name='dashboard'
+                return redirect('dashboard')
         else:
             messages.error(request, "Neplatné přihlašovací údaje.")
-            return redirect('login')                # name='login'
+            return redirect('login')
 
     return render(request, 'hlavni/login.html')
 
@@ -56,16 +59,21 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     messages.success(request, "Úspěšně odhlášen!")
-    return redirect('index')                          # name='index'
+    return redirect('index')
 
 
 def index(request):
     return render(request, 'hlavni/index.html')
 
 
-@login_required(login_url='login')                    # name='login'
+@login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'hlavni/dashboard.html')
+    if request.user.is_superuser:
+        return redirect('admin_dashboard')
+
+    # Zákazník uvidí pouze svoje opravy
+    repairs = Repair.objects.filter(customer=request.user)
+    return render(request, 'hlavni/dashboard.html', {'repairs': repairs})
 
 
 @login_required(login_url='login')
@@ -78,4 +86,16 @@ def admin_dashboard(request):
     if not request.user.is_superuser:
         messages.error(request, "Nemáte přístup na tuto stránku.")
         return redirect('dashboard')
-    return render(request, 'hlavni/admin_dashboard.html')
+
+    if request.method == "POST":
+        form = RepairForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Oprava byla úspěšně přidána.")
+            return redirect('admin_dashboard')
+    else:
+        form = RepairForm()
+
+    repairs = Repair.objects.all()
+
+    return render(request, 'hlavni/admin_dashboard.html', {'form': form, 'repairs': repairs})
