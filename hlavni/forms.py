@@ -2,6 +2,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from .models import Repair
+from .models import RepairReservation
 
 class RegistrationForm(forms.Form):
     username = forms.CharField(max_length=150)
@@ -24,3 +25,13 @@ class RepairForm(forms.ModelForm):
     class Meta:
         model = Repair
         fields = ['customer','title', 'description', 'status']
+
+class RepairReservationForm(forms.ModelForm):
+    class Meta:
+        model = RepairReservation
+        fields = ['date', 'time', 'description']
+        widgets = {
+            'date': forms.DateInput(attrs={'type': 'date'}),
+            'time': forms.TimeInput(attrs={'type': 'time'}),
+            'description': forms.Textarea(attrs={'rows': 4}),
+        }

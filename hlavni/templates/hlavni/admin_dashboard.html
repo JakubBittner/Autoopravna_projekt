@@ -28,7 +28,6 @@
         <h2>Admin Menu</h2>
         <ul>
             <li><a href="#pridat-opravu" class="active">Přidat opravu</a></li>
-            <li><a href="#sprava-oprav">Správa oprav</a></li>
         </ul>
     </aside>
 
@@ -39,51 +38,12 @@
             <h1>Přidat novou opravu</h1>
             <form id="add-repair-form" method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}  <!-- Toto automaticky vykreslí formulář -->
+                {{ form.as_p }}
 
                 <div class="form-group">
                     <button type="submit" class="btn-submit">Přidat opravu</button>
                 </div>
             </form>
-        </section>
-
-        <!-- Správa opravy -->
-        <section id="sprava-oprav">
-            <h1>Existující opravy</h1>
-            <table class="admin-repair-table">
-                <thead>
-                    <tr>
-                        <th>Název opravy</th>
-                        <th>Popis</th>
-                        <th>Stav</th>
-                        <th>Cena</th>
-                        <th>Datum</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for repair in repairs %}
-                    <tr>
-                        <td>{{ repair.id }}</td>
-                        <td>{{ repair.description }}</td>
-                        <td>
-                            {% if repair.status == 'waiting' %}
-                                Čeká na opravu
-                            {% elif repair.status == 'in_progress' %}
-                                Probíhá oprava
-                            {% elif repair.status == 'completed' %}
-                                Dokončeno
-                            {% endif %}
-                        </td>
-                        <td>{{ repair.price|default:"Neuvedeno" }}</td>
-                        <td>{{ repair.created_at|date:"d.m.Y" }}</td>
-                    </tr>
-                    {% empty %}
-                    <tr>
-                        <td colspan="5">Žádné opravy k zobrazení.</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
         </section>
     </main>
 </div>

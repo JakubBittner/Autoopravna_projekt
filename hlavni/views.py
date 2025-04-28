@@ -1,12 +1,10 @@
-# views.py
-
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Repair
-from .forms import RepairForm
+from .models import Repair, RepairReservation
+from .forms import RepairForm, RepairReservationForm
 
 def register(request):
     if request.method == "POST":
@@ -71,9 +69,12 @@ def dashboard(request):
     if request.user.is_superuser:
         return redirect('admin_dashboard')
 
-    # Zákazník uvidí pouze svoje opravy
     repairs = Repair.objects.filter(customer=request.user)
-    return render(request, 'hlavni/dashboard.html', {'repairs': repairs})
+    reservations = RepairReservation.objects.filter(user=request.user)
+    return render(request, 'hlavni/dashboard.html', {
+        'repairs': repairs,
+        'reservations': reservations
+    })
 
 
 @login_required(login_url='login')
@@ -99,3 +100,23 @@ def admin_dashboard(request):
     repairs = Repair.objects.all()
 
     return render(request, 'hlavni/admin_dashboard.html', {'form': form, 'repairs': repairs})
+
+
+@login_required
+def reservation_view(request):
+    if request.method == 'POST':
+        form = RepairReservationForm(request.POST)
+        if form.is_valid():
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+            reservation.save()
+            return redirect('dashboard')
+    else:
+        form = RepairReservationForm()
+
+    return render(request, 'hlavni/reservation.html', {'form': form})
+
+
+@login_required
+def reservation_success(request):
+    return render(request, 'hlavni/reservation_success.html')
