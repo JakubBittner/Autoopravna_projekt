@@ -1,5 +1,4 @@
 /* ZÁKLADNÍ STYLY */
-/* Základní styly */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -67,7 +66,7 @@ body {
 }
 
 .nav-links li a:hover {
-  color: #ff6600;
+  color: #ffcc00;
 }
 .nav-links li a:hover::after {
   width: 100%;
@@ -82,7 +81,7 @@ body {
   transition: background 0.3s ease;
 }
 .login-link:hover {
-  background-color: #ff6600;
+  background-color: #ffcc00;
   color: #000 !important;
 }
 
@@ -193,6 +192,10 @@ body {
     padding: 20px;
     margin-left: 0;
   }
+}
+
+#mobile-menu {
+  display: none;
 }
 
 

@@ -5,13 +5,17 @@ body {
     color: #222;
 }
 
-nav {
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #003c70;
     padding: 15px 30px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-}
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
 
 nav a {
     color: white;
@@ -88,6 +92,11 @@ footer {
     padding: 30px 20px;
     margin-top: 60px;
 }
+
+.footer-info p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
 
 @media (max-width: 768px) {
     h1 {

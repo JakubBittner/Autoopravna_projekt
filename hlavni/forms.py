@@ -24,7 +24,12 @@ class RegistrationForm(forms.Form):
 class RepairForm(forms.ModelForm):
     class Meta:
         model = Repair
-        fields = ['customer','title', 'description', 'status']
+        fields = ['customer', 'title', 'description', 'status']
+
+    def __init__(self, *args, **kwargs):
+        super(RepairForm, self).__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs.update({'class': 'form-control'})
 
 class RepairReservationForm(forms.ModelForm):
     class Meta:

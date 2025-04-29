@@ -17,29 +17,7 @@ body {
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .logo-img:hover {
-    transform: rotate(10deg) scale(1.1);
-  }
-  
-  .brand-name {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+
   .nav-links {
     list-style: none;
     display: flex;
@@ -49,7 +27,8 @@ body {
   .nav-links li a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: large;
     position: relative;
     transition: color 0.3s ease;
   }
@@ -175,12 +154,17 @@ body {
     text-align: center;
     padding: 30px 20px;
     margin-top: 60px;
-  }
+}
   
   .footer-info p {
     margin: 10px 0;
     font-size: 16px;
   }
+
+  #mobile-menu {
+    display: none;
+  }
+  
   
   @media (max-width: 768px) {
     .footer-info p {

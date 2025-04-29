@@ -36,10 +36,9 @@
         <!-- Přidání opravy -->
         <section id="pridat-opravu">
             <h1>Přidat novou opravu</h1>
-            <form id="add-repair-form" method="POST">
+            <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-
                 <div class="form-group">
                     <button type="submit" class="btn-submit">Přidat opravu</button>
                 </div>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <a href="{% url 'index' %}">Domů</a>
         <a href="{% url 'register' %}">Registrace</a>
     </nav>
@@ -27,9 +27,14 @@
     </form>
 
     <footer>
-        <p>© 2025 Carverra. Všechna práva vyhrazena.</p>
-        <script src="{% static 'js/login.js' %}"></script>
-    </footer>
+        <div class="footer-info">
+          <p><strong>Adresa:</strong> Ulice 123, 746 01 Opava</p>
+          <p><strong>Otevírací doba:</strong> Po–Pá: 8:00–17:00 | So: 8:00–12:00 | Ne: Zavřeno</p>
+          <p><strong>Kontakt:</strong> info@autoopravnabittner.cz | Tel: +420 123 456 789</p>
+          <p>&copy; 2025 Autoopravna Bittner. Všechna práva vyhrazena.</p>
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+      </footer>
 </body>
 </html>
 
