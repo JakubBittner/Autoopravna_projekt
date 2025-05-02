@@ -16,12 +16,6 @@
     <div class="menu-toggle" id="mobile-menu">&#9776;</div>
     <ul class="nav-links" id="nav-links">
 
-      <li><a href="#sluzby">Služby</a></li>
-      <li><a href="#procmy">Proč my?</a></li>
-      <li><a href="#reference">Hodnocení</a></li>
-      <li><a href="#onas">O nás</a></li>
-      <li><a href="#cenik">Ceník</a></li>
-
       {% if user.is_authenticated %}
         <li><a href="{% url 'profile' %}">Můj profil</a></li>
         <li><a href="{% url 'logout' %}">Odhlásit se</a></li>

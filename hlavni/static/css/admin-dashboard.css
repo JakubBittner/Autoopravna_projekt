@@ -103,6 +103,10 @@ body {
     color: #003c70;
 }
 
+.hidden {
+    display: none;
+  }
+
 /* Hlavní obsah */
 .admin-main {
     flex: 1;

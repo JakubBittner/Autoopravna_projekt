@@ -3,6 +3,7 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import Repair
 from .models import RepairReservation
+from .models import Auto
 
 class RegistrationForm(forms.Form):
     username = forms.CharField(max_length=150)
@@ -40,3 +41,8 @@ class RepairReservationForm(forms.ModelForm):
             'time': forms.TimeInput(attrs={'type': 'time'}),
             'description': forms.Textarea(attrs={'rows': 4}),
         }
+
+class AutoForm(forms.ModelForm):
+    class Meta:
+        model = Auto
+        fields = ['spz', 'znacka', 'model', 'prevodovka', 'dostupnost']

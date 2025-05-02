@@ -28,9 +28,8 @@
       <h2>Menu</h2>
       <ul>
         <li><a href="#" onclick="showSection('opravy')" id="opravy-link">Historie oprav</a></li>
+        <li><a href="#" onclick="showSection('pujcovna')" id="pujcovna-link">Půjčovna aut</a></li>
         <li><a href="#" onclick="showSection('navstevy')" id="navstevy-link">Historie návštěv</a></li>
-        <li><a href="#" onclick="showSection('pujcky')" id="pujcky-link">Půjčená auta</a></li>
-        <li><a href="#" onclick="showSection('dostupna')" id="dostupna-link">Dostupná auta</a></li>
         <li><a href="#" onclick="showSection('rezervace')" id="rezervace-link">Moje rezervace</a></li>
       </ul>
     </aside>
@@ -77,26 +76,40 @@
         </div>
       </section>
 
+      <section id="pujcovna" class="content-section">
+        <div class="card">
+          <h2>Dostupná auta k zapůjčení</h2>
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Značka</th>
+                <th>Model</th>
+                <th>SPZ</th>
+                <th>Akce</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for auto in auta_dostupna %}
+              <tr>
+                <td>{{ auto.make }}</td>
+                <td>{{ auto.model }}</td>
+                <td>{{ auto.license_plate }}</td>
+                <td><button class="btn-submit">Rezervovat</button></td>
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="4">Žádná auta nejsou momentálně k dispozici.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <!-- Sekce Historie návštěv -->
       <section id="navstevy" class="content-section hidden">
         <div class="card">
           <h2>Historie návštěv</h2>
-          <p>Zatím není implementováno.</p>
-        </div>
-      </section>
-
-      <!-- Sekce Půjčená auta -->
-      <section id="pujcky" class="content-section hidden">
-        <div class="card">
-          <h2>Půjčená auta</h2>
-          <p>Zatím není implementováno.</p>
-        </div>
-      </section>
-
-      <!-- Sekce Dostupná auta -->
-      <section id="dostupna" class="content-section hidden">
-        <div class="card">
-          <h2>Dostupná auta</h2>
           <p>Zatím není implementováno.</p>
         </div>
       </section>
@@ -153,7 +166,7 @@
     }
   </script>
 
-  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/dashboard.js' %}"></script>
 
 </body>
 </html>

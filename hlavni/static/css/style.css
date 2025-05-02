@@ -67,7 +67,7 @@ body {
 }
 
 .nav-links li a:hover {
-  color: #ff6600;
+  color: #ffcc00;
 }
 
 .nav-links li a:hover::after {

@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Repair, RepairReservation
-from .forms import RepairForm, RepairReservationForm
+from .models import Repair, RepairReservation, Auto
+from .forms import RepairForm, RepairReservationForm, AutoForm
 
 def register(request):
     if request.method == "POST":
@@ -120,3 +120,37 @@ def reservation_view(request):
 @login_required
 def reservation_success(request):
     return render(request, 'hlavni/reservation_success.html')
+
+@login_required(login_url='login')
+def admin_dashboard(request):
+    if not request.user.is_superuser:
+        messages.error(request, "Nemáte přístup na tuto stránku.")
+        return redirect('dashboard')
+
+    repair_form = RepairForm()
+    auto_form = AutoForm()
+
+    if request.method == "POST":
+        if 'oprava-submit' in request.POST:
+            repair_form = RepairForm(request.POST)
+            if repair_form.is_valid():
+                repair_form.save()
+                messages.success(request, "Oprava byla úspěšně přidána.")
+                return redirect('admin_dashboard')
+
+        elif 'auto-submit' in request.POST:
+            auto_form = AutoForm(request.POST)
+            if auto_form.is_valid():
+                auto_form.save()
+                messages.success(request, "Auto bylo úspěšně přidáno do půjčovny.")
+                return redirect('admin_dashboard')
+
+    repairs = Repair.objects.all()
+    auta = Auto.objects.all()
+
+    return render(request, 'hlavni/admin_dashboard.html', {
+        'form': repair_form,
+        'auto_form': auto_form,
+        'repairs': repairs,
+        'auta': auta,
+    })

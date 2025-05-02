@@ -27,14 +27,15 @@
     <aside class="sidebar">
         <h2>Admin Menu</h2>
         <ul>
-            <li><a href="#pridat-opravu" class="active">Přidat opravu</a></li>
+            <li><a href="#" onclick="showSection('pridat-opravu')" id="pridat-opravu-link">Přidat Opravu</a></li>
+            <li><a href="#" onclick="showSection('pujcovna-aut')" id="pujcovna-aut-link">Půjčovna Aut</a></li>
         </ul>
     </aside>
 
     <!-- Hlavní obsah -->
     <main class="admin-main">
         <!-- Přidání opravy -->
-        <section id="pridat-opravu">
+        <section id="pridat-opravu" class="content-section">
             <h1>Přidat novou opravu</h1>
             <form method="post">
                 {% csrf_token %}
@@ -44,6 +45,19 @@
                 </div>
             </form>
         </section>
+    
+        <section id="pujcovna-aut" class="content-section hidden">
+            <div class="card">
+              <h2>Přidat nové auto do půjčovny</h2>
+              <form method="post">
+                {% csrf_token %}
+                {{ auto_form.as_p }}
+                <div class="form-group">
+                  <button type="submit" name="btn-submit">Přidat auto</button>
+                </div>
+              </form>
+            </div>
+          </section>
     </main>
 </div>
 
