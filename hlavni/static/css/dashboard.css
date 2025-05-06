@@ -1,4 +1,4 @@
-/* ZÁKLADNÍ STYLY */
+/* ====================== ZÁKLADNÍ STYLY ====================== */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -6,6 +6,11 @@ body {
   color: #222;
 }
 
+.hidden {
+  display: none;
+}
+
+/* ====================== NAVBAR ====================== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -85,7 +90,7 @@ body {
   color: #000 !important;
 }
 
-/* SIDEBAR */
+/* ====================== SIDEBAR ====================== */
 .sidebar {
   width: 250px;
   background-color: #003c70;
@@ -138,7 +143,7 @@ body {
   color: #002c5f;
 }
 
-/* TABULKA */
+/* ====================== TABULKA (DASHBOARD) ====================== */
 .dashboard-table {
   width: 100%;
   border-collapse: collapse;
@@ -167,39 +172,24 @@ body {
   background-color: #e0f0ff;
 }
 
-/* RESPONSIVITA */
-@media (max-width: 992px) {
-  .dashboard-cards {
-    flex-direction: column;
-  }
-
-  .card-dashboard {
-    flex: 1 1 100%;
-  }
-
-  .dashboard-container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    height: auto;
-  }
-
-  .dashboard-main {
-    padding: 20px;
-    margin-left: 0;
-  }
+/* ====================== KARTY / SEKCÍ OBSAHU ====================== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
-#mobile-menu {
+.content-section {
   display: none;
 }
 
+.content-section:not(.hidden) {
+  display: block;
+}
 
-/* Footer */
+/* ====================== FOOTER ====================== */
 footer {
   background-color: #002c5f;
   color: #ffffff;
@@ -211,24 +201,4 @@ footer {
 .footer-info p {
   margin: 10px 0;
   font-size: 16px;
-}
-
-.content-section {
-  display: none;
-}
-
-.content-section:not(.hidden) {
-  display: block;
-}
-
-.card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-.hidden {
-  display: none;
 }

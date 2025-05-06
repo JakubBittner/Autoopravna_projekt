@@ -100,7 +100,7 @@ body {
   text-align: center;
   padding: 5px 0px 0px;
   position: relative;
-  background-image: url(''); /* Pokud chceš, můžeš pozadí sem doplnit */
+  background-image: url('');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -140,7 +140,7 @@ body {
 
 .services-section h2 {
   font-size: 28px;
-  color: #003c70; /* modrý nadpis */
+  color: #003c70;
   margin-bottom: 40px;
 }
 
@@ -191,7 +191,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  transition: transform 0.3s ease, background-color 0.3s ease; /* přidání přechodu pro barvu pozadí */
+  transition: transform 0.3s ease, background-color 0.3s ease;
   flex: 1 1 calc(40% - 20px);
   max-width: 400px;
   min-width: 250px;
@@ -199,12 +199,12 @@ body {
 }
 
 .service-card h3 {
-color: #002c5f;
+  color: #002c5f;
 }
 
 .service-card:hover {
   transform: scale(1.05);
-  background-color: #f0f8ff; /* stejné pozadí jako v sekci "Proč právě my" */
+  background-color: #f0f8ff;
 }
 
 /* Proč právě my */
@@ -269,7 +269,7 @@ color: #002c5f;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* trošku větší mezery */
+  gap: 30px;
 }
 
 .reference h2 {
@@ -322,20 +322,12 @@ color: #002c5f;
   text-align: center;
 }
 
-/* Mobilní responsivita */
-@media (max-width: 768px) {
-  .reviews-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 /* O nás */
 .onas {
   padding: 80px 20px;
   text-align: center;
   background-color: #f6f6f6;
-  margin-bottom: 80px; /* přidáme mezeru mezi O nás a Hodnocení */
+  margin-bottom: 80px;
 }
 
 .onas h2 {
@@ -367,12 +359,12 @@ color: #002c5f;
 
 .cenik .cards {
   display: flex;
-  justify-content: center; /* zarovná karty horizontálně na střed */
-  align-items: center; /* vertikálně středí karty v případě většího prostoru */
-  gap: 50px; /* zvětšeno pro větší mezery mezi kartami */
-  flex-wrap: wrap; /* umožňuje zalamování karet na menších obrazovkách */
-  max-width: 1200px; /* maximální šířka pro lepší vzhled */
-  margin: 0 auto; /* centrování celkové sekce */
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .cenik .card {
@@ -381,31 +373,31 @@ color: #002c5f;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   text-align: center;
-  flex: 1 1 calc(25% - 20px); /* 4 karty vedle sebe na větších obrazovkách */
+  flex: 1 1 calc(25% - 20px);
   max-width: 350px;
   min-width: 250px;
   transition: transform 0.3s ease;
 }
 
 .cenik .card:hover {
-  transform: scale(1.05); /* efekt při najetí myší */
+  transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {
   .cenik .card {
-    flex: 1 1 calc(33% - 20px); /* 3 karty vedle sebe na středně velkých obrazovkách */
+    flex: 1 1 calc(33% - 20px);
   }
 }
 
 @media (max-width: 768px) {
   .cenik .card {
-    flex: 1 1 calc(50% - 20px); /* 2 karty vedle sebe na menších obrazovkách */
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
 @media (max-width: 500px) {
   .cenik .card {
-    flex: 1 1 100%; /* 1 karta na celé šířce na mobilních zařízeních */
+    flex: 1 1 100%;
   }
 }
 
@@ -457,8 +449,6 @@ footer {
   font-size: 16px;
 }
 
-
-
 /* Efekt pro zobrazování sekcí */
 section {
   opacity: 0;
@@ -469,28 +459,4 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Responsivita */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .menu-toggle {
-    display: block;
-    color: white;
-    font-size: 28px;
-  }
-
-  .services-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cenik .cards {
-    flex-direction: column;
-  }
 }
