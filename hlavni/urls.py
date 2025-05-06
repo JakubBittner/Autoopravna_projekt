@@ -10,5 +10,5 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('profile/', views.profile, name='profile'),
     path('rezervace/', views.reservation_view, name='reservation'),
-    path('rezervace/uspesne/', views.reservation_success, name='reservation_success'),
+    path('prihlaseni_potreba/', views.prihlaseni_potreba, name='prihlaseni_potreba'),
 ]

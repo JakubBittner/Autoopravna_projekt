@@ -2,14 +2,14 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   color: #222;
 }
-
+  
 /* ====================== NAVBAR ====================== */
 .navbar {
   display: flex;
-  justify-content: space-between;  /* Tímto zajistíme, že logo bude vlevo a odkazy vpravo */
+  justify-content: space-between;
   align-items: center;
   background-color: #003c70;
   padding: 15px 30px;
@@ -18,30 +18,29 @@ body {
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-
-.navbar .logo {
+  
+.logo {
   display: flex;
   align-items: center;
 }
-
-.navbar .logo-img {
+  
+.logo-img {
   width: 40px;
   height: 40px;
   margin-right: 10px;
   transition: transform 0.3s ease-in-out;
 }
-
+  
 .logo-img:hover {
   transform: rotate(10deg) scale(1.1);
 }
-
+  
 .nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
-  margin-left: auto;  /* Tlačí odkazy na pravou stranu */
 }
-
+  
 .nav-links li a {
   color: white;
   text-decoration: none;
@@ -50,7 +49,7 @@ body {
   position: relative;
   transition: color 0.3s ease;
 }
-
+  
 .nav-links li a::after {
   content: '';
   position: absolute;
@@ -61,105 +60,99 @@ body {
   background-color: white;
   transition: width 0.3s ease;
 }
-
+  
 .nav-links li a:hover {
   color: #ffcc00;
 }
-
+  
 .nav-links li a:hover::after {
   width: 100%;
 }
-
-
-/* ====================== SEKCE REGISTRACE (Hero) ====================== */
+  
+.login-link {
+  background-color: white;
+  color: #003c70 !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+  
+.login-link:hover {
+  background-color: #ff6600;
+  color: #000 !important;
+}
+  
+  
+/* ====================== HERO SEKCE ====================== */
 .hero {
   background-color: #ffffff;
   text-align: center;
-  padding: 30px 0;
-  position: relative;
-  background-image: url(''); /* Můžeš přidat pozadí sem */
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding: 60px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  margin-top: 130px;
 }
-
+  
 .hero h1 {
   font-size: 60px;
   color: #002c5f;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
-
-.hero p {
-  font-size: 22px;
-  color: #002c5f;
-}
-
-/* ====================== FORMULÁŘ ====================== */
-.registration-form {
-  background-color: #ffffff;
-  padding: 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: 30px auto;
-  border-radius: 8px;
-}
-
-.registration-form h2 {
-  font-size: 32px;
-  color: #003c70;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.registration-form .form-group {
-  margin-bottom: 20px;
-}
-
-.registration-form label {
-  font-size: 16px;
-  color: #333;
-}
-
-.registration-form input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-top: 5px;
-}
-
-.registration-form input:focus {
-  border-color: #003c70;
-  outline: none;
-}
-
-.registration-form button {
+  
+.hero a {
   background-color: #ff6600;
-  font-size: 18px;
+  font-size: 25px;
   color: white;
-  padding: 12px 25px;
+  padding: 12px 30px;
   border: none;
-  border-radius: 30px;
+  border-radius: 35px;
   text-decoration: none;
   display: inline-block;
-  width: 100%;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-.registration-form button:hover {
+  
+.hero a:hover {
   background-color: #e55b00;
 }
 
+.button-group {
+  display: flex;
+  gap: 20px; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+/* ===== Sticky Footer Layout ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+  
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+  
 /* ====================== FOOTER ====================== */
 footer {
   background-color: #003c70;
   color: white;
   text-align: center;
   padding: 30px 20px;
-  margin-top: 60px;
+  margin-top: 10px;
 }
-
+  
 .footer-info p {
   margin: 10px 0;
   font-size: 16px;

@@ -113,7 +113,7 @@ def admin_dashboard(request):
                      'repairs': repairs})
 
 
-@login_required
+@login_required(login_url="prihlaseni_potreba")
 def reservation_view(request):
     if request.method == 'POST':
         form = RepairReservationForm(request.POST)
@@ -126,6 +126,9 @@ def reservation_view(request):
         form = RepairReservationForm()
 
     return render(request, 'hlavni/reservation.html', {'form': form})
+
+def prihlaseni_potreba(request):
+    return render(request, "hlavni/prihlaseni_potreba.html")
 
 
 @login_required

@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -10,12 +11,18 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <!-- Logo vlevo -->
+    <div class="logo">
+      <img src="{% static 'img/CRlogo.png' %}" alt="Logo" class="logo-img">
+    </div>
+    
+    <!-- Odkazy vpravo -->
     <ul class="nav-links" id="nav-links">
       <li><a href="{% url 'index' %}">Domů</a></li>
-      <li><a href="{% url 'register' %}">Registrace</a></li>
+      <li><a href="{% url 'login' %}">Přihlásit se</a></li>
     </ul>
   </nav>
+  
 
   <header class="hero">
     <h1>Registrace</h1>
@@ -62,5 +69,3 @@
 
 </body>
 </html>
-
-

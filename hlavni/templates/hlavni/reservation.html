@@ -9,9 +9,11 @@
 </head>
 <body>
     <nav class="navbar">
+        
         <div class="logo">
             <img src="{% static 'img/CRlogo.png' %}" alt="Logo" class="logo-img">
         </div>
+
         <ul class="nav-links" id="nav-links">
             <li><a href="/">Domů</a></li>
             <li><a href="/logout">Odhlásit se</a></li>
@@ -28,5 +30,15 @@
             </form>
         </main>
     </div>
+
+    <footer>
+        <div class="footer-info">
+          <p><strong>Adresa:</strong> Ulice 123, 746 01 Opava</p>
+          <p><strong>Otevírací doba:</strong> Po–Pá: 8:00–17:00 | So: 8:00–12:00 | Ne: Zavřeno</p>
+          <p><strong>Kontakt:</strong> info@autoopravnabittner.cz | Tel: +420 123 456 789</p>
+          <p>&copy; 2025 Autoopravna Bittner. Všechna práva vyhrazena.</p>
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+      </footer>
 </body>
 </html>

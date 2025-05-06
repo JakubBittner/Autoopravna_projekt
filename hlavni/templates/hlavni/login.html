@@ -10,9 +10,11 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="{% url 'index' %}">Domů</a>
-        <a href="{% url 'register' %}">Registrace</a>
-    </nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="{% url 'index' %}">Domů</a></li>
+          <li><a href="{% url 'register' %}">Registrace</a></li>
+        </ul>
+      </nav>
 
     <h1>Přihlas se pro přístup k našim službám.</h1>
 
