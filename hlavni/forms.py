@@ -46,3 +46,12 @@ class AutoForm(forms.ModelForm):
     class Meta:
         model = Auto
         fields = ['spz', 'znacka', 'model', 'prevodovka', 'dostupnost']
+
+    def __init__(self, *args, **kwargs):
+        super(AutoForm, self).__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs.update({'class': 'form-control'})
+        if "dostupnost" == 'dostupnost':
+                field.widget.attrs.update({'class': 'form-check-input'})
+        else:
+                field.widget.attrs.update({'class': 'form-control'})

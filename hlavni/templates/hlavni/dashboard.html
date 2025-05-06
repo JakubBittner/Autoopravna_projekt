@@ -91,9 +91,9 @@
             <tbody>
               {% for auto in auta_dostupna %}
               <tr>
-                <td>{{ auto.make }}</td>
+                <td>{{ auto.znacka }}</td>
                 <td>{{ auto.model }}</td>
-                <td>{{ auto.license_plate }}</td>
+                <td>{{ auto.spz }}</td>
                 <td><button class="btn-submit">Rezervovat</button></td>
               </tr>
               {% empty %}

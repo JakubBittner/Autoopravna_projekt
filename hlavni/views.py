@@ -71,15 +71,24 @@ def dashboard(request):
 
     repairs = Repair.objects.filter(customer=request.user)
     reservations = RepairReservation.objects.filter(user=request.user)
+    auta_vsechna  = Auto.objects.filter()
     return render(request, 'hlavni/dashboard.html', {
         'repairs': repairs,
-        'reservations': reservations
+        'reservations': reservations,
+        'auta_dostupna': auta_vsechna
     })
 
 
 @login_required(login_url='login')
 def profile(request):
-    return render(request, 'hlavni/dashboard.html')
+    repairs = Repair.objects.filter(customer=request.user)
+    reservations = RepairReservation.objects.filter(user=request.user)
+    auta_vsechna  = Auto.objects.filter()
+    return render(request, 'hlavni/dashboard.html', {
+        'repairs': repairs,
+        'reservations': reservations,
+        'auta_dostupna': auta_vsechna
+    }) 
 
 
 @login_required(login_url='login')
@@ -99,7 +108,9 @@ def admin_dashboard(request):
 
     repairs = Repair.objects.all()
 
-    return render(request, 'hlavni/admin_dashboard.html', {'form': form, 'repairs': repairs})
+    return render(request, 'hlavni/admin_dashboard.html',
+                   {'form': form,
+                     'repairs': repairs})
 
 
 @login_required
