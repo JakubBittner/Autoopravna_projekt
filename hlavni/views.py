@@ -81,6 +81,8 @@ def dashboard(request):
 
 @login_required(login_url='login')
 def profile(request):
+    if request.user.is_superuser:
+        return redirect('admin_dashboard')
     repairs = Repair.objects.filter(customer=request.user)
     reservations = RepairReservation.objects.filter(user=request.user)
     auta_vsechna  = Auto.objects.filter()

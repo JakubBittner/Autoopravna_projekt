@@ -10,6 +10,9 @@
 </head>
 <body>
     <nav class="navbar">
+      <div class="logo">
+        <img src="{% static 'img/CRlogo.png' %}" alt="Logo" class="logo-img">
+      </div>
         <ul class="nav-links" id="nav-links">
           <li><a href="{% url 'index' %}">Domů</a></li>
           <li><a href="{% url 'register' %}">Registrace</a></li>

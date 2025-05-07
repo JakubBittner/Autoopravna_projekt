@@ -6,13 +6,16 @@ body {
     color: #222;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #003c70;
     padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -24,12 +27,11 @@ body {
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.brand-name {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+.logo-img:hover {
+    transform: rotate(10deg) scale(1.1);
 }
 
 .nav-links {
@@ -41,12 +43,29 @@ body {
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: large;
+    position: relative;
     transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
 }
 
 .nav-links li a:hover {
     color: #ffcc00;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
 }
 
 /* Kontejner */

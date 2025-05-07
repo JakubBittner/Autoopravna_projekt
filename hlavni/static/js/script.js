@@ -38,8 +38,8 @@ const praveReklamy = [
     url: "https://www.castrol.com"
   },
   {
-    src: "/static/img/azpneu.png",
-    url: "https://www.az-pneu.cz"
+    src: "/static/img/pneu.png",
+    url: "https://www.pneuklima.cz"
   }
 ];
 

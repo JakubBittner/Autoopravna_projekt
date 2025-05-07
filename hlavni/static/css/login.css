@@ -53,6 +53,22 @@ body {
   width: 100%;  
 }
 
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-img:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
 h1 {
     text-align: center;
     color: #003c70;
@@ -113,7 +129,7 @@ footer {
     color: white;
     text-align: center;
     padding: 30px 20px;
-    margin-top: 60px;
+    margin-top: 157px;
 }
 
 .footer-info p {
