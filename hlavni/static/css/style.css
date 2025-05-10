@@ -89,6 +89,23 @@ body {
   color: #000 !important;
 }
 
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px; /* menší mezery okolo */
+    height: 50px; /* výška navbaru */
+  }
+
+  .navbar a {
+    font-size: 10px; /* menší text v odkazech */
+    margin: 0 2px; /* menší mezera mezi odkazy */
+  }
+}
+
+
+
 /* Mobilní toggle ikona */
 .menu-toggle {
   display: none;
@@ -131,6 +148,30 @@ body {
   display: inline-block;
   margin-top: 5px;
 }
+
+
+
+
+
+/* Mobilní verze */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 33px; /* zmenšeno z 85px */
+  }
+
+  .hero p {
+    font-size: 18px; /* zmenšeno z 30px */
+  }
+
+  .btn {
+    font-size: 16px; /* zmenšeno z 25px */
+    padding: 10px 20px; /* menší mezery */
+    border-radius: 20px;
+  }
+}
+
+
+
 
 /* Sekce služeb */
 .services-section {
@@ -208,6 +249,47 @@ body {
   background-color: #f0f8ff;
 }
 
+
+
+
+@media (max-width: 768px) {
+  /* 1. Skrytí postranních obrázků/reklam */
+  .side-image,
+  .reklama-img {
+    display: none !important;
+  }
+
+  /* 2. Zrušení animace hover */
+  .service-card:hover {
+    transform: none;
+    background-color: #ffffff;
+  }
+
+  /* 3. Zmenšení karet a textu */
+  .service-card {
+    padding: 1rem;
+    font-size: 15px;
+    max-width: 70%; /* dvě vedle sebe */
+    min-width: auto;
+    flex: 1 1 60%;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .cards {
+    gap: 20px; /* menší mezera mezi kartami */
+  }
+}
+
+.services-section h2 {
+  font-size: 25px;         /* menší písmo */
+  margin-bottom: 20px;     /* menší mezera pod nadpisem */
+}
+
+
+
 /* Proč právě my */
 .procmy {
   background-color: #f0f8ff;
@@ -264,6 +346,39 @@ body {
   font-size: 15px;
   color: #333;
 }
+
+
+
+@media (max-width: 768px) {
+  /* Nadpis sekce */
+  .procmy h2 {
+    font-size: 22px;       /* menší nadpis */
+    margin-bottom: 15px;   /* blíž k boxům */
+  }
+
+  /* Boxy služeb – úprava velikosti a odstranění animací */
+  .procmy-box {
+    width: 70%;            /* dvě vedle sebe */
+    height: auto;          /* přizpůsobí výšku obsahu */
+    padding: 15px;         /* menší vnitřní mezery */
+  }
+
+  .procmy-box:hover {
+    transform: none;       /* vypnutí animace */
+    background-color: #f5f5f5;
+  }
+
+  .procmy-box h3 {
+    font-size: 18px;       /* menší nadpis v boxu */
+  }
+
+  .procmy-box p {
+    font-size: 15px;       /* menší text v boxu */
+  }
+}
+
+
+
 
 /* Reference, Hodnocení */
 .reference .reviews-container {
@@ -323,6 +438,48 @@ body {
   text-align: center;
 }
 
+
+
+@media (max-width: 768px) {
+  /* Nadpis sekce */
+  .reference h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .reference {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  /* Recenze box */
+  .review {
+    width: 70%;
+    padding: 15px;
+    transform: none; /* defaultní stav */
+  }
+
+  .review:hover {
+    transform: none; /* vypnutí animace */
+  }
+
+  .review img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .review h3 {
+    font-size: 16px;
+  }
+
+  .review p {
+    font-size: 14px;
+  }
+}
+
+
+
 /* O nás */
 .onas {
   padding: 80px 20px;
@@ -344,6 +501,28 @@ body {
   line-height: 1.8;
   color: #555;
 }
+
+
+
+
+/* Mobilní rozhraní */
+@media (max-width: 768px) {
+  .onas {
+    animation: none !important;
+    transition: none !important;
+    padding-top: 40px; /* Menší mezera nad celou sekcí */
+  }
+
+  .onas h2 {
+    font-size: 28px;
+    margin-top: 0; /* Odstraní případnou vnitřní mezeru nad nadpisem */
+  }
+
+  .onas p {
+    font-size: 16px;
+  }
+}
+
 
 /* Ceník */
 .cenik {
@@ -391,8 +570,25 @@ body {
 }
 
 @media (max-width: 768px) {
+  .cenik h2 {
+    font-size: 28px; /* menší nadpis */
+    padding-top: 1px;
+  }
+
+   .cenik .cards {
+    gap: 25px; /* menší mezera mezi kartami */
+  }
+
   .cenik .card {
     flex: 1 1 calc(50% - 20px);
+    padding: 1.2rem; /* menší padding */
+    max-width: 300px;
+    font-size: 15px; /* menší text */
+    transition: none !important; /* vypnutí animací */
+  }
+
+  .cenik .card:hover {
+    transform: none !important; /* zrušení scale efektu */
   }
 }
 
@@ -436,6 +632,36 @@ body {
   transform: scale(1.1);
 }
 
+
+
+@media (max-width: 768px) {
+  .sponzori {
+    padding: 40px 20px; /* menší mezery nad a pod */
+  }
+
+  .sponzori h2 {
+    font-size: 24px; /* menší nadpis */
+    margin-bottom: 20px; /* menší mezera pod nadpisem */
+  }
+
+  .sponzori-logo {
+    gap: 15px; /* menší mezera mezi logy */
+  }
+
+  .sponzori-logo img {
+    width: 100px;
+    height: 100px;
+    transition: none !important;
+  }
+
+  .sponzori-logo img:hover {
+    transform: none !important;
+  }
+}
+
+
+
+
 /* Footer */
 footer {
   background-color: #002c5f;
@@ -460,4 +686,23 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+
+
+@media (max-width: 768px) {
+  .footer-info p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Změna formátování konkrétních řádků */
+  .footer-info p:nth-child(2), /* Otevírací doba */
+  .footer-info p:nth-child(3)  /* Kontakt */
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
