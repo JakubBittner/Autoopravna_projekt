@@ -68,6 +68,19 @@ body {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px; /* menší mezery okolo */
+    height: 50px; /* výška navbaru */
+  }
+
+  .navbar a {
+    font-size: 10px; /* menší text v odkazech */
+    margin: 0 2px; /* menší mezera mezi odkazy */
+  }
+
+}
+
 /* Kontejner */
 .admin-container {
     display: flex;
@@ -114,6 +127,28 @@ body {
 .hidden {
     display: none;
   }
+
+
+  @media (max-width: 768px) {
+  .sidebar {
+    width: 80px; /* nebo méně */
+  }
+  .sidebar h2 {
+    font-size: 1rem; /* zmenšit text */
+  }
+  .sidebar ul li a {
+    padding: 8px 5px; /* menší padding */
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-main {
+    margin-left: 1px; /* nebo méně, podle sidebaru */
+    padding: 20px;
+  }
+}
+
 
 /* Hlavní obsah */
 .admin-main {
