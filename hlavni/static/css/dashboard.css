@@ -90,19 +90,6 @@ body {
   color: #000 !important;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 10px 15px; /* menší mezery okolo */
-    height: 50px; /* výška navbaru */
-  }
-
-  .navbar a {
-    font-size: 10px; /* menší text v odkazech */
-    margin: 0 2px; /* menší mezera mezi odkazy */
-  }
-
-}
-
 /* ====================== SIDEBAR ====================== */
 .sidebar {
   width: 250px;
