@@ -71,6 +71,20 @@ body {
 }
 
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px; /* menší mezery okolo */
+    height: 50px; /* výška navbaru */
+  }
+
+  .navbar a {
+    font-size: 10px; /* menší text v odkazech */
+    margin: 0 2px; /* menší mezera mezi odkazy */
+  }
+
+}
+
+
 /* ====================== SEKCE REGISTRACE (Hero) ====================== */
 .hero {
   background-color: #ffffff;
@@ -91,6 +105,19 @@ body {
 .hero p {
   font-size: 22px;
   color: #002c5f;
+}
+
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+        padding: 0px 16px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        padding: 0 16px;
+    }
 }
 
 /* ====================== FORMULÁŘ ====================== */
@@ -151,6 +178,38 @@ body {
   background-color: #e55b00;
 }
 
+
+@media (max-width: 768px) {
+    .registration-form {
+        max-width: 80%;
+        padding: 20px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .registration-form h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .registration-form label {
+        font-size: 14px;
+    }
+
+    .registration-form input {
+        padding: 8px;
+        font-size: 14px;
+        margin-top: 4px;
+        width: 95%;
+    }
+
+    .registration-form button {
+        font-size: 16px;
+        padding: 13px;
+    }
+}
+
+
 /* ====================== FOOTER ====================== */
 footer {
   background-color: #003c70;
@@ -163,4 +222,21 @@ footer {
 .footer-info p {
   margin: 10px 0;
   font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+  .footer-info p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Změna formátování konkrétních řádků */
+  .footer-info p:nth-child(2), /* Otevírací doba */
+  .footer-info p:nth-child(3)  /* Kontakt */
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

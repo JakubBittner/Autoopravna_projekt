@@ -29,3 +29,17 @@ function showSection(sectionId) {
     });
   });
   
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.getElementById("menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+
+  toggleButton.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+  });
+});
+
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.toggle('open');
+}
