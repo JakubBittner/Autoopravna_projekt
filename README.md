@@ -1,14 +1,13 @@
 
 # Django Projekt – Spuštění a práce s aplikací
 
-Tento projekt je vytvořen pomocí frameworku **Django**. Využívá databázi **MySQL** a běží ve **virtuálním prostředí**.
+Tento projekt je vytvořen pomocí frameworku **Django**. Využívá databázi **db.sqlite3** a běží ve **virtuálním prostředí**.
 
 ---
 
 ## 📋 Předpoklady
 
 - Python 3.8 nebo vyšší
-- MySQL server (nainstalovaný a běžící)
 - `pip` (Python balíčkový manažer)
 - `virtualenv` (pro práci s virtuálním prostředím)
 
@@ -54,54 +53,11 @@ Pokud máš `requirements.txt`:
 ```bash
 pip install -r requirements.txt
 ```
-
-Pokud ne:
-
-```bash
-pip install django mysqlclient
-```
+---
 
 ---
 
-### 4. Nastavení připojení k databázi
-
-V souboru `settings.py` nastav databázi:
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nazev_databaze',
-        'USER': 'uzivatel',
-        'PASSWORD': 'heslo',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-```
-
----
-
-### 5. Migrace databáze
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
----
-
-### 6. (Volitelné) Vytvoření administrátorského účtu
-
-```bash
-python manage.py createsuperuser
-```
-
-Zadej uživatelské jméno, e-mail a heslo.
-
----
-
-### 7. Spuštění vývojového serveru
+### 4. Spuštění vývojového serveru
 
 ```bash
 python manage.py runserver
